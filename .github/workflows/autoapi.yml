@@ -61,7 +61,7 @@ jobs:
     - name: Commit #Upload a new refresh_token to the repository
       run: |
         git config --global user.email joseavilasg.dev@gmail.com
-        git config --global user.name joseavilasg09
+        git config --global user.name joseavilasg
         git add .
         git commit -m "Update new refresh token with MSO_E5_Dev_AutoRenew" -a
     - name: Push changes
