@@ -2,17 +2,6 @@ import requests
 import json
 import time
 
-# Register the azure app first and make sure the app has the following permissions:
-# files: Files.Read.All、Files.ReadWrite.All、Sites.Read.All、Sites.ReadWrite.All
-# user: User.Read.All、User.ReadWrite.All、Directory.Read.All、Directory.ReadWrite.All
-# mail: Mail.Read、Mail.ReadWrite、MailboxSettings.Read、MailboxSettings.ReadWrite
-# After registration, you must click on behalf of xxx to grant administrator consent, otherwise outlook api cannot be called
-
-
-
-
-
-
 endpoints = [
     'https://graph.microsoft.com/v1.0/me/drive/root',
     'https://graph.microsoft.com/v1.0/me/drive',
