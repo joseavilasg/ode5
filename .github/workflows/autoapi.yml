@@ -1,4 +1,4 @@
-name: ODE5_AR
+name: ODE5
 
 on: 
   release:
@@ -62,7 +62,7 @@ jobs:
         git config --global user.email joseavilasg.dev@gmail.com
         git config --global user.name joseavilasg
         git add .
-        git commit -m "Update new refresh ode5 tk" -a
+        git commit -m "Update new r ODE5 t" -a
     - name: Push changes
       uses: ad-m/github-push-action@v0.6.0
       with:
