@@ -1,5 +1,4 @@
-#Automatic call to the API to keep alive, encrypted version
-name: MSO_E5_Dev_AutoRenew
+name: ODE5_AR
 
 on: 
   release:
@@ -63,7 +62,7 @@ jobs:
         git config --global user.email joseavilasg.dev@gmail.com
         git config --global user.name joseavilasg
         git add .
-        git commit -m "Update new refresh token with MSO_E5_Dev_AutoRenew" -a
+        git commit -m "Update new refresh ode5 tk" -a
     - name: Push changes
       uses: ad-m/github-push-action@v0.6.0
       with:
