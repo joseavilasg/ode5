@@ -12,7 +12,7 @@ on:
     - cron: "10 */2 * * *"
   watch:
     types: [started]
-   
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -40,15 +40,16 @@ jobs:
         REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }} # refresh_token prepare
       run: | 
         cp main.py temp.py
-        echo $CONFIG_ID > configid.txt
-        echo $CONFIG_KEY > configkey.txt
-        echo $REFRESH_TOKEN > refreshtoken.txt
+        echo "client_id = \"$CONFIG_ID\"" > configid.txt
+        echo "client_secret = \"$CONFIG_KEY\"" > configkey.txt
+        echo "refresh_token = \"$REFRESH_TOKEN\"" > refreshtoken.txt
         sed -i '10 r configid.txt' temp.py
         sed -i '12 r configkey.txt' temp.py
         sed -i '14 r refreshtoken.txt' temp.py
     - name: Test Api #ApiCall
       run: | 
         echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.log
+        cat temp.py
         python3 temp.py
     - name: Delete secrets config #Delete secret config
       run: | 
