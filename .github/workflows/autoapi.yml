@@ -40,9 +40,9 @@ jobs:
         REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }} # refresh_token prepare
       run: | 
         cp main.py temp.py
-        echo "client_id = \"$CONFIG_ID\"" > configid.txt
-        echo "client_secret = \"$CONFIG_KEY\"" > configkey.txt
-        echo "refresh_token = \"$REFRESH_TOKEN\"" > refreshtoken.txt
+        echo "client_id = r'$CONFIG_ID'" > configid.txt
+        echo "client_secret = r'$CONFIG_KEY'" > configkey.txt
+        echo "refresh_token = r'$REFRESH_TOKEN'" > refreshtoken.txt
         sed -i '10 r configid.txt' temp.py
         sed -i '12 r configkey.txt' temp.py
         sed -i '14 r refreshtoken.txt' temp.py
